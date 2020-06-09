@@ -1,11 +1,11 @@
 {
-  "name": "history-dispatcher",
-  "version": "1.0.0",
+  "name": "@jiesu12/history-dispatcher",
+  "version": "1.1.0",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "build": "webpack --mode production --config webpack.prod.js",
-    "watch": "webpack --watch --mode development --config webpack.dev.js"
+    "build": "rm -rf ./lib && tsc",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -27,19 +27,9 @@
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
-    "css-loader": "^3.5.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "sass-loader": "^8.0.2",
-    "source-map-loader": "^1.0.0",
-    "style-loader": "^1.2.1",
-    "terser-webpack-plugin": "^3.0.3",
-    "ts-loader": "^7.0.5",
-    "typescript": "^3.9.5",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-merge": "^4.2.2"
+    "react-router-dom": "^5.2.0"
   }
 }
