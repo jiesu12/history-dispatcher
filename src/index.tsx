@@ -1,6 +1,6 @@
 import * as H from 'history'
 import * as React from 'react'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 /**
  * Fires a load event whenever history location changes.
@@ -11,7 +11,9 @@ import {withRouter} from 'react-router-dom'
  */
 const HistoryDispatcher: React.ComponentClass = withRouter(({ location }: {location: H.Location}) => {
   React.useEffect(() => {
-    window.frameElement.dispatchEvent(new Event('load'))
+    if (window.frameElement) {
+      window.frameElement.dispatchEvent(new Event('load'))
+    }
   }, [location.key])
   return <div className='history-dispatcher' />
 })
