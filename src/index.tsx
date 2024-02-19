@@ -1,6 +1,5 @@
-import * as H from 'history'
 import * as React from 'react'
-import { withRouter } from 'react-router-dom'
+import { useLocation, } from 'react-router-dom'
 
 /**
  * Fires a load event whenever history location changes.
@@ -9,13 +8,15 @@ import { withRouter } from 'react-router-dom'
  * Fileswim parent window listens to iframe load event to
  * update the browser url.
  */
-const HistoryDispatcher: React.ComponentClass = withRouter(({ location }: {location: H.Location}) => {
+const HistoryDispatcher = () => {
+  const location = useLocation()
+
   React.useEffect(() => {
     if (window.frameElement) {
       window.frameElement.dispatchEvent(new Event('load'))
     }
   }, [location.key])
   return <div className='history-dispatcher' />
-})
+}
 
 export default HistoryDispatcher
